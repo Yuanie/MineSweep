@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="http://at.alicdn.com/t/font_1622006_ffez24yrm1e.js"></script>
+  <script src="./js/jQuery1.11.0.js"></script>
+  <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+
+  <title>扫雷</title>
+</head>
+
+<body>
+  <h1>扫雷游戏简易版</h1>
+  <!-- 暂停确认框 -->
+  <!-- <div id="dialog-confirm" title="暂停了游戏...">
+    <p>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-jinggao"></use>
+      </svg>
+      <span>点击继续则继续本游戏，点击取消重新开始!</span>
+    </p>
+  </div> -->
+  <div class="container">
+    <div class="menu">
+      <!-- 顶部菜单 -->
+      <div class="left">
+        <div class="option" title="选项">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-caozuojiemiantubiao---_xuanxiang"></use>
+          </svg>
+          <ul class="sub-option">
+            <li class="item" title="初级">初级：10个雷 9x9网格</li>
+            <li class="item" title="中级">中级：40个雷 16x16网格</li>
+            <li class="item" title="高级">高级：99个雷 16x30网格</li>
+            <li class="item" title="游戏界面设置">
+              游戏界面
+              <ul class="themeSettings">
+                <li class="greyTheme">
+                  <span></span><span title="灰色主题">灰色</span>
+                </li>
+                <li class="blueTheme">
+                  <span></span><span title="蓝色主题">蓝色</span>
+                </li>
+                <li class="greenTheme">
+                  <span></span><span title="绿色主题">绿色</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pause" title="暂停">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-zanting1"></use>
+          </svg>
+        </div>
+
+        <div class="smile" title="重新开始">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xiaolian"></use>
+          </svg>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="home" title="查看我的主页">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-fangzi--copy"></use>
+          </svg>
+          <a href="http://www.yyvector.top">CLICK ME</a>
+        </div>
+      </div>
+    </div>
+    <!-- 游戏区域 -->
+    <div class="gameArea"></div>
+    <!-- 时间与雷 -->
+    <div class="tips">
+      <div class="time-box time-used" title="已用时间">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-shizhong"></use>
+        </svg>
+        <span class="time-num">00:00:00</span>
+      </div>
+      <div class="mine-box" title="剩余雷数">
+        <div class="mine-num">10</div>
+        <svg class="icon mine-left" aria-hidden="true">
+          <use xlink:href="#icon-zhadan"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/index.js"></script>
+
+</html>

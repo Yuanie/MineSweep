@@ -1,0 +1,388 @@
+html,
+body,
+ul,
+li,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.mine-left {
+  margin-left: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #000000;
+}
+
+a:active {
+  color: #ff0000;
+}
+
+a:visited {
+  color: rgb(8, 173, 250);
+}
+
+a:hover {
+  color: #ff2600;
+}
+
+/* 整个游戏的容器 */
+.container {
+  width: 265px;
+  height: 345px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #424242;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  background-color: #ccdaee;
+}
+
+/* 顶部菜单栏 */
+.menu {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #2b4f77;
+}
+
+/* 选项.option与重新开始游戏按钮.smile */
+.option,
+.pause,
+.smile {
+  flex: 1;
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 32px;
+  color: #eeeeee;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.left {
+  float: left;
+  margin-left: 20px;
+}
+
+.home {
+  float: right;
+  margin-right: 20px;
+}
+
+.sub-option {
+  width: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #5bbdff;
+  display: none;
+}
+
+.sub-option>.item {
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  line-height: 36px;
+  text-indent: 10px;
+  text-align: left;
+  color: #424242;
+  background-color: #dddddd;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.sub-option>.item.item-click-bg {
+  background-color: #999999;
+  border-left: 4px solid #990014;
+}
+
+.sub-option>.item:nth-child(4) {
+  border-bottom: none;
+}
+
+.sub-option>.item:hover {
+  border: 1px solid rgb(35, 45, 104);
+}
+
+.themeSettings {
+  width: 0;
+  height: 0;
+  background-color: #dddddd;
+  position: relative;
+  top: -36px;
+  left: 182px;
+  overflow: hidden;
+}
+
+.themeSettings.themeSettings-show {
+  display: block;
+  width: 180px;
+  height: 90px;
+}
+
+.themeSettings>li {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  float: left;
+  line-height: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #cccccc;
+}
+
+.themeSettings>.greyTheme>span:nth-child(1),
+.themeSettings>.blueTheme>span:nth-child(1),
+.themeSettings>.greenTheme>span:nth-child(1) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.themeSettings>.greyTheme>span:nth-child(1) {
+  border: 2px outset #cccccc;
+  background: radial-gradient(circle, #aaaaaa 80%, lightgrey);
+}
+
+.themeSettings>.blueTheme>span:nth-child(1) {
+  border: 2px outset #6495ed;
+  background: radial-gradient(circle, #436eee 80%, #6495ed);
+}
+
+.themeSettings>.greenTheme>span:nth-child(1) {
+  border: 2px outset #6ab43f;
+  background: radial-gradient(circle, #24b65c 80%, #2588ac);
+}
+
+.themeSettings>.greyTheme>span:nth-child(2),
+.themeSettings>.blueTheme>span:nth-child(2),
+.themeSettings>.greenTheme>span:nth-child(2) {
+  display: inline-block;
+  width: 118px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 12px;
+  box-sizing: border-box;
+  float: right;
+}
+
+.themeSettings>.greyTheme>span:nth-child(2):hover {
+  background-color: #aaaaaa;
+}
+
+.themeSettings>.blueTheme>span:nth-child(2):hover {
+  background-color: #436eee;
+}
+
+.themeSettings>.greenTheme>span:nth-child(2):hover {
+  background-color: #24b65c;
+}
+
+.gameArea {
+  width: 225px;
+  height: 225px;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  overflow: hidden;
+  background-color: lightgrey;
+}
+
+/* 下方时间和剩余雷数目提示区域 */
+.tips {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* 时间提示 和 剩余雷数目 */
+.time-box,
+.mine-box {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.time-box {
+  margin-left: 20px;
+}
+
+.mine-box {
+  float: right;
+  margin-right: 20px;
+}
+
+.time-num,
+.mine-num {
+  display: inline-block;
+  height: 24px;
+  width: 60px;
+  text-align: center;
+  line-height: 24px;
+  color: #ffff00;
+  border-radius: 4px;
+  background-color: #999999;
+  box-shadow: 0 0 8px #424242 inset;
+}
+
+.time-num {
+  font-size: 14px;
+  float: right;
+}
+
+.mine-num {
+  float: left;
+}
+
+/* 游戏区域的格子 */
+.square {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid grey;
+  float: left;
+  position: relative;
+}
+
+/* 两个主题：灰色和蓝色 */
+.square>span.greyStyle,
+.square>span.blueStyle,
+.square>span.greenStyle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 23px;
+  color: #4b0088;
+  box-sizing: border-box;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.greyStyle {
+  border: 2px outset #cccccc;
+  background: radial-gradient(circle, #aaaaaa 80%, lightgrey);
+}
+
+.blueStyle {
+  border: 2px outset #6495ed;
+  background: radial-gradient(circle, #436eee 80%, #6495ed);
+}
+
+.greenStyle {
+  border: 2px outset #6ab43f;
+  background: radial-gradient(circle, #24b65c 80%, #2588ac);
+}
+
+.square>.greyStyle:hover {
+  background: radial-gradient(circle, gray 80%, lightgrey);
+}
+
+.square>.blueStyle:hover {
+  background: radial-gradient(circle, #0000cd 80%, #6495ed);
+}
+
+.square>.greenStyle:hover {
+  background: radial-gradient(circle, #034712 80%, #197a6a);
+}
+
+/* 标志炸弹 */
+.bg-mine {
+  background: url(../img/boom.svg) no-repeat;
+}
+
+/* 标志旗子 */
+.mark-flag {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  font-size: 18px;
+  color: #4B0088;
+  text-align: center;
+  line-height: 21px;
+  background: url(../img/flag.png) no-repeat;
+}
+
+/* 点到了地雷的遮罩 */
+.click-mine-mask {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  opacity: 0.6;
+  background-color: crimson;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 游戏结束的遮罩 */
+.gameOver-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 22px;
+  text-align: center;
+  color: #290088;
+  opacity: 0.6;
+  background-color: #999999;
+}
