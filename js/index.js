@@ -511,7 +511,6 @@
     // jquery ui替换原始确认框
     if (confirm("点击确定继续，取消重开！")) {
       gameTiming(sessionStorage.getItem("pause-time"));
-
     } else {
       restart();
     }

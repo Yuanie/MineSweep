@@ -39,20 +39,20 @@ a {
   text-decoration: none;
 }
 
+/* 伪类 LoVe HA 的顺序 */
 a:link {
   color: #000000;
 }
-
-a:active {
-  color: #ff0000;
-}
-
 a:visited {
   color: rgb(8, 173, 250);
 }
 
 a:hover {
-  color: #ff2600;
+  color: lightgreen;
+}
+
+a:active {
+  color: #ff0000;
 }
 
 /* 整个游戏的容器 */
@@ -121,7 +121,7 @@ a:hover {
   display: none;
 }
 
-.sub-option>.item {
+.sub-option > .item {
   width: 100%;
   height: 36px;
   font-size: 14px;
@@ -135,16 +135,16 @@ a:hover {
   border-bottom: 1px solid #aaaaaa;
 }
 
-.sub-option>.item.item-click-bg {
+.sub-option > .item.item-click-bg {
   background-color: #999999;
   border-left: 4px solid #990014;
 }
 
-.sub-option>.item:nth-child(4) {
+.sub-option > .item:nth-child(4) {
   border-bottom: none;
 }
 
-.sub-option>.item:hover {
+.sub-option > .item:hover {
   border: 1px solid rgb(35, 45, 104);
 }
 
@@ -164,7 +164,7 @@ a:hover {
   height: 90px;
 }
 
-.themeSettings>li {
+.themeSettings > li {
   display: inline-block;
   width: 100%;
   height: 30px;
@@ -174,9 +174,9 @@ a:hover {
   border-bottom: 1px solid #cccccc;
 }
 
-.themeSettings>.greyTheme>span:nth-child(1),
-.themeSettings>.blueTheme>span:nth-child(1),
-.themeSettings>.greenTheme>span:nth-child(1) {
+.themeSettings > .greyTheme > span:nth-child(1),
+.themeSettings > .blueTheme > span:nth-child(1),
+.themeSettings > .greenTheme > span:nth-child(1) {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -185,24 +185,24 @@ a:hover {
   margin-left: 3px;
 }
 
-.themeSettings>.greyTheme>span:nth-child(1) {
+.themeSettings > .greyTheme > span:nth-child(1) {
   border: 2px outset #cccccc;
   background: radial-gradient(circle, #aaaaaa 80%, lightgrey);
 }
 
-.themeSettings>.blueTheme>span:nth-child(1) {
+.themeSettings > .blueTheme > span:nth-child(1) {
   border: 2px outset #6495ed;
   background: radial-gradient(circle, #436eee 80%, #6495ed);
 }
 
-.themeSettings>.greenTheme>span:nth-child(1) {
+.themeSettings > .greenTheme > span:nth-child(1) {
   border: 2px outset #6ab43f;
   background: radial-gradient(circle, #24b65c 80%, #2588ac);
 }
 
-.themeSettings>.greyTheme>span:nth-child(2),
-.themeSettings>.blueTheme>span:nth-child(2),
-.themeSettings>.greenTheme>span:nth-child(2) {
+.themeSettings > .greyTheme > span:nth-child(2),
+.themeSettings > .blueTheme > span:nth-child(2),
+.themeSettings > .greenTheme > span:nth-child(2) {
   display: inline-block;
   width: 118px;
   height: 30px;
@@ -214,15 +214,15 @@ a:hover {
   float: right;
 }
 
-.themeSettings>.greyTheme>span:nth-child(2):hover {
+.themeSettings > .greyTheme > span:nth-child(2):hover {
   background-color: #aaaaaa;
 }
 
-.themeSettings>.blueTheme>span:nth-child(2):hover {
+.themeSettings > .blueTheme > span:nth-child(2):hover {
   background-color: #436eee;
 }
 
-.themeSettings>.greenTheme>span:nth-child(2):hover {
+.themeSettings > .greenTheme > span:nth-child(2):hover {
   background-color: #24b65c;
 }
 
@@ -303,9 +303,9 @@ a:hover {
 }
 
 /* 两个主题：灰色和蓝色 */
-.square>span.greyStyle,
-.square>span.blueStyle,
-.square>span.greenStyle {
+.square > span.greyStyle,
+.square > span.blueStyle,
+.square > span.greenStyle {
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -334,21 +334,21 @@ a:hover {
   background: radial-gradient(circle, #24b65c 80%, #2588ac);
 }
 
-.square>.greyStyle:hover {
+.square > .greyStyle:hover {
   background: radial-gradient(circle, gray 80%, lightgrey);
 }
 
-.square>.blueStyle:hover {
+.square > .blueStyle:hover {
   background: radial-gradient(circle, #0000cd 80%, #6495ed);
 }
 
-.square>.greenStyle:hover {
+.square > .greenStyle:hover {
   background: radial-gradient(circle, #034712 80%, #197a6a);
 }
 
 /* 标志炸弹 */
 .bg-mine {
-  background: url(../img/boom.svg) no-repeat;
+  background: url(../img/boom.svg) 50% 50% no-repeat;
 }
 
 /* 标志旗子 */
@@ -357,10 +357,10 @@ a:hover {
   width: 21px;
   height: 21px;
   font-size: 18px;
-  color: #4B0088;
+  color: #4b0088;
   text-align: center;
   line-height: 21px;
-  background: url(../img/flag.png) no-repeat;
+  background: url(../img/flag.svg) 50% 50% no-repeat;
 }
 
 /* 点到了地雷的遮罩 */
